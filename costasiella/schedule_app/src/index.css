@@ -1,0 +1,182 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Costasiella plugin css */
+
+
+/* Typography */
+#cs-classes h3,
+#cs-modals h3 {
+	clear: both;
+	color: #333;
+}
+
+#cs-classes h3 small,
+#cs-modals h3 small {
+	font-size: 80%;
+}
+
+#cs-classes h6 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+
+
+.cs-center {
+	text-align: center;
+}
+
+.cs_class_header {
+	font-weight: bold;
+}
+
+
+
+
+/* Layout */
+#cs-classes,
+#cs-teachers {
+	clear: both;
+	color: #333;
+	margin-top: 20px;
+}
+/* 
+#cs-classes a {
+	color: blue;
+} */
+
+#cs-classes .cs-class {
+	overflow: hidden;
+	border-bottom: 1px solid #EAEAEA;
+}
+
+#cs-classes .cs-class-header {
+	overflow: hidden;
+	border-bottom: 1px solid #EAEAEA;
+}
+
+/* #cs-classes button {
+    border-radius: 2px;
+    color: #97124a;
+    border: 1px solid #97124a;
+    background-color: white;
+} */
+
+/* #cs-classes button:hover,
+#cs-classes button:active,
+#cs-classes button:focus {
+    color: white;
+    background-color: #97124a;
+} */
+
+#cs-classes .cs-hidden-md button,
+#cs-classes .cs-hidden-lg button {
+    padding: 10px;
+    margin-bottom: 6px;
+}
+
+.cs-classes h3:fist-child {
+	margin-top:20px;
+}
+
+#cs-classes .openstudio_class:last-child {
+	border-bottom: none;
+}
+
+#cs-loading {
+	padding: 20px;
+	clear: both;
+}
+
+.cs-float-right {
+  float: right; 
+}
+
+.cs-row {
+	width: 100%;
+/*
+	color: #333;
+*/
+	clear: both;
+}
+
+.cs-row p {
+	color: #333;
+}
+
+[class*="cs-col-md-"] {
+    width: 100%;
+}
+
+[class*="cs-col-md-"] {
+    float: left;
+    padding: 3px 10px 3px 10px;
+}
+
+
+/* Costasiella plugin Desktop CSS */
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+
+  #cs-loading {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    clear: both;
+  }
+
+  .cs-row {
+    width: 100%;
+  /*
+    color: #333;
+  */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  [class*="cs-col-md-"] {
+        float: left;
+        padding: 7px 10px 7px 10px;
+    }
+
+    .cs-col-md-1 {width: 8.33%;}
+    .cs-col-md-2 {width: 16.66%;}
+    .cs-col-md-3 {width: 25%;}
+    .cs-col-md-4 {width: 33.33%;}
+    .cs-col-md-5 {width: 41.66%;}
+    .cs-col-md-6 {width: 50%;}
+    .cs-col-md-7 {width: 58.33%;}
+    .cs-col-md-8 {width: 66.66%;}
+    .cs-col-md-9 {width: 75%;}
+    .cs-col-md-10 {width: 83.33%;}
+    .cs-col-md-11 {width: 91.66%;}
+    .cs-col-md-12 {width: 100%;}
+
+  #cs-modals .modal-lg {
+    width: 900px;
+  }
+
+  #cs-modals .modal-dialog {
+    margin: 50px auto 100px auto;
+  }
+
+  #cs-modals .modal-content {
+    height: auto;
+    max-height: calc(100vh - 100px);
+    border-radius: 6px;
+  }
+
+}
