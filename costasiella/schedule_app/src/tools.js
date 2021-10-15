@@ -44,7 +44,7 @@ export function get_class_messages(status, description, holiday, holidayName) {
     return <span>Holiday ({holidayName})</span>
   }
 
-  if (status == 'CANCELED') {
+  if (status === 'CANCELED') {
     return description
   }
 }

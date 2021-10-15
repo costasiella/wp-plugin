@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useQuery } from '@apollo/client'
 import { v4 } from 'uuid'
 import moment from 'moment'
@@ -31,7 +31,10 @@ function getButtonBook(bookingStatus, dateBookingOpen, urlBooking, dateFormat) {
       book = "Fully booked";
       break;
     case "OK":
-      book = <a target="_blank" href={urlBooking}><button>Book &gt;</button></a>;
+      book = <a target="_blank" rel="noreferrer" href={urlBooking}><button>Book &gt;</button></a>;
+      break;
+    default:
+      book = ""
       break;
   }
 

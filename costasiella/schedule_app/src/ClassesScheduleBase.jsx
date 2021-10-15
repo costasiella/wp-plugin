@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useQuery } from '@apollo/client'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { v4 } from 'uuid'
@@ -10,10 +10,6 @@ import { get_list_query_variables } from "./tools"
 
 
 function ClassesScheduleBase({ children, dateFrom, refetchClasses=f=>f, setDates=f=>f }) {
-  // let [locationId, setLocationId] = useState("")
-  // let [classtypeId, setClasstypeId] = useState("")
-  // let [levelId, setLevelId] = useState("")
-  // Query schedule filter input values
   const { loading, error, data } = useQuery(GET_FILTER_VALUES_QUERY)
 
   if (loading) {

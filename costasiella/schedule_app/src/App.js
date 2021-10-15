@@ -1,21 +1,14 @@
-import Cookies from 'js-cookie'
 import {
   ApolloClient,
   from,
   createHttpLink,
-  ApolloLink,
   InMemoryCache,
   ApolloProvider,
-  useQuery,
-  Observable,
-  gql
 } from "@apollo/client";
 import { setContext } from '@apollo/client/link/context';
 import { onError } from "@apollo/client/link/error";
 
-import logo from './logo.svg';
 import './App.css';
-
 
 import ClassesSchedule from "./ClassesSchedule"
 
@@ -31,7 +24,7 @@ const errorLink = onError(({ graphQLErrors, networkError, operation, forward, re
   if (networkError) console.log(`[Network error]: ${networkError}`);
 
   // request size check
-  if (graphQLErrors[0].message == "Request body exceeded settings.DATA_UPLOAD_MAX_MEMORY_SIZE.") {
+  if (graphQLErrors[0].message === "Request body exceeded settings.DATA_UPLOAD_MAX_MEMORY_SIZE.") {
     console.error('CHOSEN FILE EXCEEDS SIZE LIMIT')
   }
 });
@@ -55,20 +48,6 @@ const httpLink = createHttpLink({
   credentials: 'include', // We're in a different domain, so include, not same-origin
 });
 
-// const csrfMiddleWare = new ApolloLink(async (operation, forward) => {
-//   const csrftoken = await getCsrfToken();
-//   console.log("GOT TOKEN: " + csrftoken)
-//   console.log(Cookies.set('csrftoken', csrftoken));
-
-//   operation.setContext({
-//     // set the 'X-CSRFToken' header to the csrftoken
-//     headers: {
-//         'X-CSRFToken': csrftoken,
-//     },
-//   })
-
-//   return forward(operation)
-// })
 
 const csrfLink = setContext(async (_, { headers }) => {
   // get the csrfToken
@@ -95,22 +74,6 @@ function App() {
     <ApolloProvider client={client}>
       <ClassesSchedule />
     </ApolloProvider>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
   );
 }
 
