@@ -10,6 +10,7 @@ import { onError } from "@apollo/client/link/error";
 
 import './App.css';
 
+import config from "./config"
 import ClassesSchedule from "./ClassesSchedule"
 
 
@@ -34,7 +35,7 @@ const errorLink = onError(({ graphQLErrors, networkError, operation, forward, re
 let csrftoken;
 async function getCsrfToken() {
     if (csrftoken) return csrftoken;
-    csrftoken = await fetch('http://localhost:3000/d/csrf/')
+    csrftoken = await fetch(`${config.BASE_URL}/d/csrf`)
         .then(response => response.json())
         .then(data => data.csrfToken)
     console.log("GOT TOKEN: " + csrftoken)
@@ -44,7 +45,7 @@ async function getCsrfToken() {
 
 //Set up link to Costasiella backend
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3000/d/graphql/',
+  uri: `${config.BASE_URL}/d/graphql/`,
   credentials: 'include', // We're in a different domain, so include, not same-origin
 });
 
